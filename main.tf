@@ -55,7 +55,7 @@ resource "aws_instance" "myFirstInstance" {
 
 # Create Elastic IP address
 resource "aws_eip" "myElasticIP" {
-  vpc      = true
+   domain      = "vpc"
   instance = aws_instance.myFirstInstance.id
 tags= {
     Name = "jenkins_elastic_ip"
