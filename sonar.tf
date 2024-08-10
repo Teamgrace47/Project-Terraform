@@ -1,15 +1,15 @@
 resource "aws_instance" "mySonarInstance" {
-      ami           = "ami-0c7217cdde317cfec"
-      key_name = "key-today"
+      ami           = "ami-0a0e5d9c7acc336f1"
+      key_name = "test1keys"
       instance_type = "t2.micro"
-      vpc_security_group_ids = [aws_security_group.sonar-sg-2022.id]
+      vpc_security_group_ids = [aws_security_group.sonar-sg-2024.id]
       tags= {
         Name = "sonar_instance"
       }
     }
 
- resource "aws_security_group" "sonar-sg-2022" {
-      name        = "security_sonar_group_2022"
+ resource "aws_security_group" "sonar-sg-2024" {
+      name        = "security_sonar_group_2024"
       description = "security group for Sonar"
 
       ingress {
@@ -41,7 +41,7 @@ resource "aws_instance" "mySonarInstance" {
 
 # Create Elastic IP address for Sonar instance
 resource "aws_eip" "mySonarInstance" {
-  vpc      = true
+   domain      = "vpc"
   instance = aws_instance.mySonarInstance.id
 tags= {
     Name = "sonar_elastic_ip"
