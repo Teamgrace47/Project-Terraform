@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'e72dffdf-fc73-4517-9f09-b1a558eaf39c', url: 'https://github.com/Teamgrace47/myInfra2021Repo']])
+                 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'git-test-token', url: 'https://github.com/Teamgrace47/Project-Terraform']])
             }
         }
     
