@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "dec2024class" {
+resource "aws_s3_bucket" "my-1st-terraform-bucket" {
   bucket_prefix = var.bucket_prefix
   acl = var.acl
   
